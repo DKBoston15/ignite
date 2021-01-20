@@ -1,11 +1,17 @@
 import React from "react";
-import Home from "./pages/home";
+import Home from "./pages/Home";
+import GlobalStyles from "./components/GlobalStyles";
+import { Route } from "react-router-dom";
+import Nav from "./components/Nav";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Ignite</h1>
-      <Home />
+      <GlobalStyles />
+      <Nav />
+      <Route path={["/game/:id", "/"]}>
+        <Home />
+      </Route>
     </div>
   );
 }
